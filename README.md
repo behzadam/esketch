@@ -1,59 +1,48 @@
-# Effect Zero-to-Hero
+# Esketch
 
-Learn [Effect](https://effect.website/) from scratch with a checklist and runnable exercises.
+Learn [Effect](https://effect.website/) by seeing it — each sketch is a small p5.js canvas driven by Effect (streams, retries, layers, scopes, fibers, queues).
 
-## How to use
-
-1. Pick one unchecked item below.
-2. Open the linked exercise file.
-3. Implement the `TODO`s.
-4. Run it:
+## Run
 
 ```bash
-pnpm practice exercises/01-intro/01-effect-type.ts
+pnpm install
+pnpm dev
 ```
 
-5. Mark the item `[x]` when done.
-
-Also useful:
+Open the URL Vite prints (usually http://localhost:5173). Pick a sketch in the sidebar.
 
 ```bash
 pnpm typecheck
-pnpm test
 ```
 
-Docs: [effect.website](https://effect.website/) · [LLM guide](https://effect.website/)
+## How to practice
 
----
+1. Open the sketch’s `src/sketches/NN-…/sketch.ts`
+2. Fill in the `TODO`s (READMEs in each folder explain the goal)
+3. Save — Vite HMR reloads; watch the canvas
 
-## Intro — foundations
+Leaving a sketch unmounts p5 and interrupts Effect fibers via `createSketchRuntime().dispose()`.
 
-- [ ] [What is Effect? Why `Effect<A, E, R>`](exercises/01-intro/01-effect-type.ts)
-- [ ] [`Effect.succeed` / `fail` / `sync` / `promise` / `tryPromise`](exercises/01-intro/02-constructors.ts)
-- [ ] [`Effect.map` / `flatMap` / piping](exercises/01-intro/03-map-flatmap.ts)
-- [ ] [`Effect.gen` + `yield*`](exercises/01-intro/04-gen-yield.ts)
-- [ ] [Running: `runSync` / `runPromise` / `runFork`](exercises/01-intro/05-running.ts)
-- [ ] [Typed errors (`Schema.TaggedError`) + `catchTag` / `catchAll` / `mapError`](exercises/01-intro/06-typed-errors.ts)
-- [ ] [Schema basics (`Schema.Struct`, decode/encode)](exercises/01-intro/07-schema-basics.ts)
-- [ ] [Layers & services (`Context.Service`, `Layer.succeed`, `Effect.provide`)](exercises/01-intro/08-layers-services.ts)
+## Sketches
 
-## Mid — real apps
+- [ ] [01 · Hello Canvas](src/sketches/01-hello-canvas) — `succeed` / `sync` / `runSync`
+- [ ] [02 · Clock Stream](src/sketches/02-clock-stream) — `Stream.tick` + `Ref`
+- [ ] [03 · Retry Pulse](src/sketches/03-retry-pulse) — `Schedule` + `retry`
+- [ ] [04 · Layer Palette](src/sketches/04-layer-palette) — `Context.Service` + `Layer`
+- [ ] [05 · Scope Trail](src/sketches/05-scope-trail) — `acquireRelease` / Scope
+- [ ] [06 · Fiber Interrupt](src/sketches/06-fiber-interrupt) — `forkChild` + `Fiber.interrupt`
+- [ ] [07 · Queue Particles](src/sketches/07-queue-particles) — `Queue.offer` / `take`
 
-- [ ] [Resource safety (`Effect.acquireRelease`, `Scope`)](exercises/02-mid/01-resources-scope.ts)
-- [ ] [Concurrency (`Effect.all`, `Effect.forEach`, fibers)](exercises/02-mid/02-concurrency.ts)
-- [ ] [Interrupts & timeouts](exercises/02-mid/03-interrupt-timeout.ts)
-- [ ] [Retry / schedule / backoff](exercises/02-mid/04-retry-schedule.ts)
-- [ ] [Config (`Config`, env)](exercises/02-mid/05-config.ts)
-- [ ] [Logging & tracing (OpenTelemetry basics)](exercises/02-mid/06-logging-tracing.ts)
-- [ ] [HTTP client patterns with Effect](exercises/02-mid/07-http-client.ts)
-- [ ] [Testing with Effect](exercises/02-mid/08-testing.ts) · [test file](exercises/02-mid/08-testing.test.ts)
+## Layout
 
-## Pro — production
+```
+src/
+  main.ts              # hash router + p5 mount
+  lib/effect-p5.ts     # fork / dispose helpers
+  sketches/NN-name/    # sketch.ts + README.md
+```
 
-- [ ] [Complex Layer graphs / composition](exercises/03-pro/01-layer-graphs.ts)
-- [ ] [Streams (`effect/Stream`)](exercises/03-pro/02-streams.ts)
-- [ ] [Workflows / durable patterns](exercises/03-pro/03-workflows.ts)
-- [ ] [Schema → API contracts](exercises/03-pro/04-schema-api-contracts.ts)
-- [ ] [Observability in prod](exercises/03-pro/05-observability-prod.ts)
-- [ ] [Incremental adoption in existing TS codebases](exercises/03-pro/06-incremental-adoption.ts)
-- [ ] [Effect + AI / LLM-friendly patterns](exercises/03-pro/07-llm-patterns.ts)
+## Author
+
+- X: [@behzad_pro](https://x.com/behzad_pro)
+- LinkedIn: [behzadam](https://www.linkedin.com/in/behzadam)

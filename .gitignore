@@ -1,8 +1,10 @@
 node_modules/
+.pnpm-store/
 dist/
+.vite/
+effect-zero-to-hero/
 .env
 .env.*
 *.log
 .DS_Store
 coverage/
-.vitest/
