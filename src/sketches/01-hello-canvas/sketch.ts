@@ -22,13 +22,13 @@ export const createSketch = (host: HTMLElement) => {
       p.createCanvas(w, h)
       p.noStroke()
 
-      // TODO: use Effect.sync to compute canvas center { x, y }
-      // TODO: use Effect.succeed for a radius (e.g. 48)
-      // Hint: const point = Effect.runSync(Effect.sync(() => ({ x: w / 2, y: h / 2 })))
-      void Effect
-      x = 40
-      y = 40
-      radius = 20
+      const point = Effect.runSync(
+        Effect.sync(() => ({ x: w / 2, y: h / 2 })),
+      )
+      const r = Effect.runSync(Effect.succeed(48))
+      x = point.x
+      y = point.y
+      radius = r
     }
 
     p.draw = () => {

@@ -25,7 +25,7 @@ Leaving a sketch unmounts p5 and interrupts Effect fibers via `createSketchRunti
 
 ## Sketches
 
-- [ ] [01 · Hello Canvas](src/sketches/01-hello-canvas) — `succeed` / `sync` / `runSync`
+- [x] [01 · Hello Canvas](src/sketches/01-hello-canvas) — `succeed` / `sync` / `runSync`
 - [ ] [02 · Clock Stream](src/sketches/02-clock-stream) — `Stream.tick` + `Ref`
 - [ ] [03 · Retry Pulse](src/sketches/03-retry-pulse) — `Schedule` + `retry`
 - [ ] [04 · Layer Palette](src/sketches/04-layer-palette) — `Context.Service` + `Layer`
