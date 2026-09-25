@@ -32,6 +32,10 @@ Leaving a sketch unmounts p5 and interrupts Effect fibers via `createSketchRunti
 - [ ] [05 · Scope Trail](src/sketches/05-scope-trail) — `acquireRelease` / Scope
 - [ ] [06 · Fiber Interrupt](src/sketches/06-fiber-interrupt) — `forkChild` + `Fiber.interrupt`
 - [ ] [07 · Queue Particles](src/sketches/07-queue-particles) — `Queue.offer` / `take`
+- [ ] [08 · PubSub Ripples](src/sketches/08-pubsub-ripples) — `PubSub.publish` / `subscribe`
+- [ ] [09 · Deferred Handshake](src/sketches/09-deferred-handshake) — `Deferred.await` / `succeed`
+- [ ] [10 · Semaphore Lanes](src/sketches/10-semaphore-lanes) — `Semaphore.withPermit`
+- [ ] [11 · TxRef Transfer](src/sketches/11-txref-transfer) — `TxRef` + `Effect.tx`
 
 ## Layout
 
